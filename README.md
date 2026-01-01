@@ -35,6 +35,30 @@ pip install terminal-state[pyte]
 pip install terminal-state[dev]
 ```
 
+### NixOS / devenv Setup
+
+For NixOS users, this project includes a complete development environment configuration:
+
+```bash
+# Install devenv (one-time setup)
+nix profile install --accept-flake-config github:cachix/devenv/latest
+
+# Enter the development environment
+devenv shell
+
+# Or use direnv for automatic activation
+direnv allow
+```
+
+The devenv environment includes:
+- Python 3.11 with all dependencies
+- asciinema for terminal recording
+- agg for fast GIF conversion
+- Development tools (pytest, black, ruff, mypy)
+- Pre-commit hooks
+
+See [DEVENV_SETUP.md](DEVENV_SETUP.md) for detailed setup instructions.
+
 ## Quick Start
 
 ### Basic Recording

@@ -1,0 +1,10 @@
+# devenv.yaml - devenv configuration
+# See: https://devenv.sh/reference/yaml-options/
+
+# Allow unfree packages (if needed)
+allowUnfree: false
+
+# Inputs for the development environment
+inputs:
+  nixpkgs:
+    url: github:NixOS/nixpkgs/nixpkgs-unstable
