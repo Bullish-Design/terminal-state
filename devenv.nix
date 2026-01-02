@@ -11,23 +11,23 @@
   # https://devenv.sh/packages/
   packages = with pkgs; [
     # Core terminal tools
-    tmux              # Required for libtmux backend
-    asciinema         # Terminal session recorder
-    agg               # Asciinema to GIF converter (modern, fast)
+    tmux # Required for libtmux backend
+    asciinema # Terminal session recorder
+    agg # Asciinema to GIF converter (modern, fast)
 
     # Image and font support
-    imagemagick       # Image processing utilities
-    ghostscript       # PostScript/PDF interpreter (for imagemagick)
+    imagemagick # Image processing utilities
+    ghostscript # PostScript/PDF interpreter (for imagemagick)
 
     # Fonts for terminal rendering
-    dejavu_fonts      # DejaVu fonts
-    liberation_ttf    # Liberation fonts
-    source-code-pro   # Source Code Pro monospace font
+    dejavu_fonts # DejaVu fonts
+    liberation_ttf # Liberation fonts
+    source-code-pro # Source Code Pro monospace font
 
     # Utilities
-    git               # Version control
-    curl              # HTTP client
-    jq                # JSON processor
+    git # Version control
+    curl # HTTP client
+    jq # JSON processor
   ];
 
   # https://devenv.sh/scripts/
@@ -111,12 +111,8 @@
     python = {
       enable = true;
       version = "3.11";
-
-      # Use uv for fast package management
-      uv = {
-        enable = true;
-        sync.enable = true;
-      };
+      venv.enable = true;
+      uv.enable = true;
 
       # Python packages
       # Note: The main dependencies are installed via pyproject.toml
