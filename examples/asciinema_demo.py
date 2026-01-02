@@ -53,7 +53,7 @@ def demo_gif_export():
         session.send_command("echo '╚════════════════════════════════════╝'")
         time.sleep(0.5)
 
-        session.send_command("for i in {1..5}; do echo \"Frame $i\"; sleep 0.2; done")
+        session.send_command('for i in {1..5}; do echo "Frame $i"; sleep 0.2; done')
         time.sleep(2.0)
 
         # Export to both formats
@@ -124,6 +124,11 @@ def demo_with_metadata():
         print(f"✓ Recorded with metadata: {output_path}\n")
 
 
+def print_break():
+    """Print a visual break in the console."""
+    print("\n\n" + "-" * 60 + "\n\n")
+
+
 def main():
     """Run all demo examples."""
     print("\n" + "=" * 60)
@@ -131,19 +136,26 @@ def main():
     print("=" * 60 + "\n")
 
     # Create output directory for demos
-    output_dir = Path("asciinema_demos")
+    output_dir = Path("examples/asciinema_demos")
     output_dir.mkdir(exist_ok=True)
 
     # Change to output directory
     import os
+
     os.chdir(output_dir)
     print(f"Output directory: {output_dir.absolute()}\n")
 
     try:
         # Run demos
         demo_basic_recording()
+        print_break()
+
         demo_gif_export()
+        print_break()
+
         demo_interactive_session()
+        print_break()
+
         demo_with_metadata()
 
         print("=" * 60)

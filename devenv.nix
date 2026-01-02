@@ -130,24 +130,24 @@
   # };
 
   # https://devenv.sh/pre-commit-hooks/
-  pre-commit.hooks = {
-    # Python formatting
-    black.enable = true;
+  # pre-commit.hooks = {
+  #   # Python formatting
+  #   black.enable = true;
 
-    # Python linting
-    ruff.enable = true;
+  #   # Python linting
+  #   ruff.enable = true;
 
-    # Type checking
-    mypy = {
-      enable = true;
-      settings = {
-        binPath = "mypy";
-      };
-    };
+  #   # Type checking
+  #   mypy = {
+  #     enable = true;
+  #     settings = {
+  #       binPath = "mypy";
+  #     };
+  #   };
 
-    # Nix formatting
-    nixpkgs-fmt.enable = true;
-  };
+  #   # Nix formatting
+  #   nixpkgs-fmt.enable = true;
+  # };
 
   # https://devenv.sh/enterShell/
   enterShell = ''
@@ -179,6 +179,7 @@
 
     # Create tmux socket directory if it doesn't exist
     mkdir -p "${config.env.DEVENV_ROOT}/.tmux"
+    echo ""
   '';
 
   # https://devenv.sh/tasks/

@@ -1,0 +1,3 @@
+{"version": 2, "width": 80, "height": 24, "timestamp": 1767392770, "title": "Terminal Recording", "env": {"TERM": "xterm-256color"}}
+[1.3763153553009033, "o", "echo 'test export'"]
+[1.5640978813171387, "o", "echo 'test export'\n\n\nls -la"]
