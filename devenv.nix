@@ -189,4 +189,33 @@
   # };
 
   # See full reference at https://devenv.sh/reference/options/
+
+  # devman — the automation plane (CONCEPT.md §5). `base` alone: this repository
+  # ships no scheduled work and writes none of its own files.
+  devman = {
+    enable = true;
+    project = "terminal-state";
+    groups = [ "base" ];
+  };
+
+  # https://devenv.sh/tasks/
+  #
+  # The two task names the `base` group calls (groups/base/README.md). devenv
+  # owns each implementation; Dagu owns the composition (§6). `uv run --extra
+  # dev` rather than bare names: the venv bin is on the interactive shell's PATH
+  # but not on the task runner's PATH (STAGE_7_LOG.md, wave 2b). The tree
+  # carries 1 ruff finding today (recorded, not repaired).
+  #
+  # `env -u PYTHONPATH` is load-bearing: this devenv's PYTHONPATH prepends Nix
+  # python3.13 site-packages (asciinema/shellij/pydantic stacks) over the 3.11
+  # venv, so `import pydantic_core` resolves the 3.13 binary and fails — 7
+  # collection errors without the unset. `src` stays importable via the venv's
+  # own editable `.pth`.
+  tasks = {
+    "terminal-state:lint".exec = "uv run --extra dev ruff check .";
+    "terminal-state:test".exec = "env -u PYTHONPATH uv run --extra dev pytest";
+
+    "base:check".after = [ "terminal-state:lint" ];
+    "base:test".after = [ "terminal-state:test" ];
+  };
 }
