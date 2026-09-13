@@ -1,0 +1,4 @@
+schema = 1
+project = "terminal-state"
+groups = ["base"]
+policy = "stable"
