@@ -1,3 +1,3 @@
-{"version": 2, "width": 80, "height": 24, "timestamp": 1767392770, "title": "Terminal Recording", "env": {"TERM": "xterm-256color"}}
-[1.3763153553009033, "o", "echo 'test export'"]
-[1.5640978813171387, "o", "echo 'test export'\n\n\nls -la"]
+{"version": 2, "width": 80, "height": 24, "timestamp": 1789352478, "title": "Terminal Recording", "env": {"TERM": "xterm-256color"}}
+[0.22753262519836426, "o", "echo 'test export'\n\n\n  WARN $SHELL -> \"zsh\" which is not executable (ENOENT: No such file or director\ny), falling back to password db lookup\necho 'test export'"]
+[0.42374277114868164, "o", "echo 'test export'\n\n\n  WARN $SHELL -> \"zsh\" which is not executable (ENOENT: No such file or director\ny), falling back to password db lookup\necho 'test export'\n\n\nls -la"]
