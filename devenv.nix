@@ -192,12 +192,6 @@
 
   # devman — the automation plane (CONCEPT.md §5). `base` alone: this repository
   # ships no scheduled work and writes none of its own files.
-  devman = {
-    enable = true;
-    project = "terminal-state";
-    groups = [ "base" ];
-  };
-
   # https://devenv.sh/tasks/
   #
   # The two task names the `base` group calls (groups/base/README.md). devenv
